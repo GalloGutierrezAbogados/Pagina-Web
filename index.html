@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Despacho Juridico Gallo Gutierrez | Despecho Juridico</title>
+
+  <!-- CONECTAR CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="top-bar">
+
+    <div class="logo">
+      <h1>Despacho Juridico Gallo Gutierrez Abogados</h1>
+    </div>
+
+    <div class="redes">
+       <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@valeskastore?_r=1&_t=ZS-95Vxvf34yxU"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+
+  <br>
+  
+  <p class="subtitulo">Defensa legal con experiencia y compromiso</p>
+  <i class="fa-solid fa-scale-balanced"></i>
+  <p> <b>Justicia, confianza y resultados</b></p>
+
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <h2 style="color: aliceblue;">Tu derecho, nuestra causa</h2>
+    <p>Agenda tu asesoria con nosotros</p>
+
+    <a class="btn" href="https://wa.me/50379019126" target="_blank">
+  <i class="fab fa-whatsapp"></i> Agendar
+    </a>
+
+    <a class="btn2" href="tel:+50379019126">
+      Llamar ahora
+    </a>
+  </div>
+</section>
+
+<section class="doctor">
+  <h2>Sobre Abogada...</h2>
+
+  <div class="card">
+    <h3>Lic. Gallo Gutierrez</h3>
+    <p>Licenciada en Ciencia Juridicas</p>
+  </div>
+</section>
+<section class="servicios">
+  <h2>Servicios</h2>
+
+  <div class="card">
+    <h3>Derecho Penal</h3>
+    <p>Asistencia en procesos</p>
+  </div>
+
+  <div class="card">
+    <h3>Derecho Civil</h3>
+    <p></p>
+  </div>
+
+ <div class="card">
+    <h3>Derecho Familiar</h3>
+    <p></p>
+  </div>
+<div class="card">
+    <h3>Derecho Mercantil</h3>
+    <p></p>
+  </div>
+  <div class="card">
+    <h3>Derecho Laboral</h3>
+    <p></p>
+  </div>
+  <div class="card">
+    <h3>Transito</h3>
+    <p></p>
+  </div>
+  <div class="card">
+    <h3>Administrativo</h3>
+    <p></p>
+  </div>
+<section class="testimonios">
+  <h2>Opiniones de Clientes</h2>
+
+  <div class="comentario">
+    <div class="perfil">
+      <div>
+        <strong>C.M</strong>
+      </div>
+    </div>
+    <p class="texto">Excelente atención,Lo recomiendo totalmente.</p>
+  </div>
+
+  <div class="comentario">
+    <div class="perfil">
+      <div>
+        <strong>A.L</strong>
+      </div>
+    </div>
+    <p class="texto">Muy buena experiencia, me atendieron rápido y con mucha amabilidad.</p>
+  </div>
+
+</section>
+
+<section class="ubicacion">
+  <h2>Ubicación</h2>
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.2565887978817!2d-89.14531812542253!3d13.642149686738373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63369a095fb567%3A0x2d2ab98e8731264b!2sResidencial%20Sierra%20Verde!5e0!3m2!1ses!2ssv!4v1773769135218!5m2!1ses!2ssv" 
+width="600" 
+height="450" 
+style="border:0;" 
+allowfullscreen="" 
+loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+ <div class="horario">
+  <div class="dia" data-dia="1">Lunes: <span>8:00–17:00</span></div>
+  <div class="dia" data-dia="2">Martes: <span>8:00–17:00</span></div>
+  <div class="dia" data-dia="3">Miércoles: <span>8:00–17:00</span></div>
+  <div class="dia" data-dia="4">Jueves: <span>8:00–17:00</span></div>
+  <div class="dia" data-dia="5">Viernes: <span>8:00–17:00</span></div>
+  <div class="dia" data-dia="6">Sábado: <span>8:00–13:00</span></div>
+</div>
+<script>
+  const hoy = new Date().getDay(); 
+  // Domingo = 0, Lunes = 1, etc.
+
+  document.querySelectorAll(".dia").forEach(dia => {
+    if (parseInt(dia.dataset.dia) === hoy) {
+      dia.classList.add("activo");
+    }
+  });
+</script>
+<div id="estado-clinica" class="estado">
+  Verificando horario...
+</div>
+<script>
+  const estado = document.getElementById("estado-clinica");
+  const boton = document.getElementById("btn-accion");
+
+  const ahora = new Date();
+  const dia = ahora.getDay();
+  const hora = ahora.getHours();
+  const minutos = ahora.getMinutes();
+  const horaActual = hora + minutos / 60;
+
+  const horarios = {
+    1: [8, 17],
+    2: [8, 17],
+    3: [8, 17],
+    4: [8, 17],
+    5: [8, 24],
+    6: [8, 13]
+  };
+
+  function formatoTiempo(horas) {
+    const h = Math.floor(horas);
+    const m = Math.round((horas - h) * 60);
+    return `${h}h ${m}min`;
+  }
+
+  let abierto = false;
+  let mensaje = "";
+  let claseEstado = "";
+
+  if (horarios[dia]) {
+    const [inicio, fin] = horarios[dia];
+
+    if (horaActual >= inicio && horaActual <= fin) {
+      abierto = true;
+      const tiempoRestante = fin - horaActual;
+      mensaje = `🟢 Abierto ahora • Cierra en ${formatoTiempo(tiempoRestante)}`;
+      claseEstado = "abierto";
+    } else if (horaActual < inicio) {
+      mensaje = `🟡 Abre en ${formatoTiempo(inicio - horaActual)}`;
+      claseEstado = "cerrado";
+    } else {
+      mensaje = "🔴 Cerrado";
+      claseEstado = "cerrado";
+    }
+  } else {
+    mensaje = "🔴 Cerrado hoy";
+    claseEstado = "cerrado";
+  }
+
+  // ESTADO VISUAL
+  estado.textContent = mensaje;
+  estado.classList.add(claseEstado);
+
+  // CONFIGURACIÓN WHATSAPP
+  const telefono = "50379019126"; //
+  const mensajeWA = "Hola, quiero agendar una cita";
+
+  if (abierto) {
+    boton.textContent = "📅 Agendar por WhatsApp";
+    boton.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensajeWA)}`;
+    boton.classList.add("abierto");
+  } else {
+    boton.textContent = "💬 Dejar mensaje";
+    boton.href = `https://wa.me/${telefono}?text=Hola, quisiera información sobre horarios`;
+    boton.classList.add("cerrado");
+  }
+</script>
+
+
+</section>
+
+<a class="btn-waze" href="https://waze.com/ul?q=San+Salvador" target="_blank">
+  <i class="fas fa-map-marker-alt"></i> Cómo llegar con Waze
+</a>
+
+<footer>
+  <p>© 2026 Derechos Reservados</p>
+  <p>📍 San Salvador, El Salvador</p>
+   <div class="redes-footer">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@valeskastore?_r=1&_t=ZS-95Vxvf34yxU"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+<a href="https://wa.me/50379019126?text=Hola,%20quiero%20información" 
+   class="whatsapp-float" 
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>
