@@ -33,6 +33,15 @@ body {
     transform: translateY(0);
   }
 }
+.marca img {
+  height: 150px;
+}
+.marca {
+  position: absolute;
+  top: -35px;
+  left: 5%;
+  transform: translateX(-50%);
+}
 /* CONTENEDOR FLEX */
 .top-bar {
   display: flex;
@@ -120,6 +129,10 @@ header h1 {
   background: #000000; /* TikTok */
 }
 
+.redes a:nth-child(4):hover {
+  background: #d91515; /* Youtube */
+}
+
 .redes-footer {
   display: flex;
   justify-content: center;
@@ -158,6 +171,9 @@ header h1 {
 .redes-footer a:nth-child(3):hover {
   background: #000000; /* TikTok */
 }
+.redes-footer a:nth-child(4):hover {
+  background: #ec1212; /* Youtube */
+}
 
 /* HERO */
 .hero {
@@ -167,22 +183,56 @@ header h1 {
 
 /* HERO PREMIUM */
 .hero {
-  background-image: url('img/sasun-bughdaryan-SUp2xgMvyXQ-unsplash.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
 }
 
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 🔥 CLAVE */
+  z-index: 0;
+}
+
+
+.bg-slider img {
+   position: absolute;
+   top: 0;
+   left: 0;
+  width: 100%;
+  height: 100%; /* 🔥 CLAVE */
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-position: center;
+}
+
+.bg-slider img.active {
+  opacity: 1;
+}
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 /* BOTÓN SECUNDARIO */
@@ -380,16 +430,17 @@ header h1 {
 }
 /* FOOTER */
 footer {
+  position: relative;
   background: #0A3D62;
   color: white;
   text-align: center;
   padding: 15px;
 }
 .whatsapp-float {
-  position: fixed;
+  position: absolute;
   width: 60px;
   height: 60px;
-  bottom: 20px;
+  bottom: -20px;
   right: 20px;
   background-color: #25D366;
   color: white;
