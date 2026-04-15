@@ -25,7 +25,52 @@ body {
   transform: translateY(-20px);
   animation: bajar 1s ease forwards;
   animation-delay: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
   
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left img {
+  height:150px;
+}
+.left p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.left p {
+  margin-top: 5px;
+  font-size: 14px;
+}.center {
+  text-align: center;
+  flex: 1;
+}
+
+.center h1 {
+  font-size: 28px;
+}
+
+/* DERECHA */
+.redes {
+  display: flex;
+  gap: 15px;
+}
+
+.redes a {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  transition: 0.3s;
+}
+
+.redes a:hover {
+  background: #1abc9c;
 }
 @keyframes bajar {
   to {
@@ -36,12 +81,7 @@ body {
 .marca img {
   height: 150px;
 }
-.marca {
-  position: absolute;
-  top: -35px;
-  left: 5%;
-  transform: translateX(-50%);
-}
+
 /* CONTENEDOR FLEX */
 .top-bar {
   display: flex;
@@ -223,6 +263,13 @@ header h1 {
 .overlay {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
 }
 .hero::after {
   content: "";
@@ -473,45 +520,45 @@ footer {
 
 @media (max-width: 768px) {
 
-  .hero {
-    height: 100vh;
-  }
-
-  .overlay h2 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  .overlay p {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .btn, .btn2 {
-    display: block;
-    margin: 10px auto;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .btn, .btn2 {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
-  }
-
-}
-@media (max-width: 768px) {
-
   .header {
     flex-direction: column;
     gap: 10px;
   }
 
-}
+  .marca {
+    position: static;
+    transform: none;
+  }
 
+}
+.btn, .btn2 {
+  padding: 12px 20px;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+
+  .btn, .btn2 {
+    width: 90%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+  }
+
+}
+h2 {
+  font-size: 40px;
+}
+@media (max-width: 768px) {
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+}
 .mapa {
   width: 100%;
   height: 300px;
@@ -523,13 +570,16 @@ footer {
   border: 0;
 }
 
-body {
-  font-size: 16px;
-}
 @media (max-width: 768px) {
 
-  .mapa {
-    height: 250px;
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .marca {
+    position: static;
+    transform: none;
   }
 
 }
